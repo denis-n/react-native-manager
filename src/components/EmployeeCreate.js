@@ -34,7 +34,6 @@ class EmployeeCreate extends Component {
         <CardSection style={styles.pickerSectionStyle}>
           <Text style={styles.pickerTextStyle}>Shift</Text>
           <Picker
-            style={styles.pickerStyle}
             selectedValue={this.props.shift}
             onValueChange={value =>
               this.props.employeeUpdate({ prop: "shift", value })
@@ -65,9 +64,6 @@ const styles = {
   pickerTextStyle: {
     fontSize: 18,
     paddingLeft: 20
-  },
-  pickerStyle: {
-    heigth: "100%"
   }
 };
 
