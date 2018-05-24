@@ -17,6 +17,9 @@ export default (state = INITIAL_STATE, action) => {
     case types.EMPLOYEE_CREATED:
       return INITIAL_STATE;
 
+    case types.EMPLOYEE_SAVE_SUCCESS:
+      return INITIAL_STATE;
+
     default:
       return state;
   }

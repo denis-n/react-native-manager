@@ -38,7 +38,7 @@ export const employeeCreate = ({ name, phone, shift }) => {
 export const employeeSave = ({ name, phone, shift, uid }) => {
   const { currentUser } = firebase.auth();
 
-  return () => {
+  return (dispatch) => {
     firebase
       .database()
       .ref(`/users/${currentUser.uid}/employees/${uid}`)
@@ -49,6 +49,10 @@ export const employeeSave = ({ name, phone, shift, uid }) => {
       })
       .then(() => {
         Actions.employeeList();
+
+        dispatch({
+          type: types.EMPLOYEE_SAVE_SUCCESS
+        })
       });
   };
 };
